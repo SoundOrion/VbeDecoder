@@ -58,7 +58,7 @@ Function Decode(Chaine)
  index=-1
  For i=1 to Len(Chaine)
   c=asc(Mid(Chaine,i,1))
-  If c<128 Then index=index+1
+  If 0<=c and c<128 Then index=index+1
   If (c=9) or ((c>31) and (c<128)) Then
    If (c<>60) and (c<>62) and (c<>64) Then
     Chaine=Left(Chaine,i-1) & Mid(tDecode(c),Mid(Combinaison,(index mod 64)+1,1),1) & Mid(Chaine,i+1)
